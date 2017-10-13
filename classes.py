@@ -3,7 +3,7 @@ class Exercise:
 
     def __init__(self, number, query):
         self.number = 1
-        self.query = "SELECT bla FROM nah WHERE bla like '%a%' ORDER BY duh asc"
+        self.query = "text"
         Exercise.exerciseCount += 1
 
     def show(self):
