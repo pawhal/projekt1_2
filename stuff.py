@@ -19,7 +19,6 @@ class Exercise:
 
 def save(file, dict):
     with open(file, "w") as f:
-        #file.truncate()
         for key, val in sorted(dict.items()):
             f.write(str(key) + " " + val + "\n")
 
@@ -27,4 +26,4 @@ def schedsave(file, dict):
     while 1:
         save(file, dict)
         time.sleep(10.0 - time.time() % 10.0)
-        print("KEK")
+        #print("KEK")
