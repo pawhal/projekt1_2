@@ -1,23 +1,13 @@
 from stuff import *
-from threading import Thread
+import schedule
+import time
 
 base = {}
 
-t2 = Thread(target = schedsave("odp.txt", base))
-t1 = Thread(target = main)
-
-t1.start()
-t2.start()
-t1.join()
+schedule.every().seconds.do(save, file = "odp.txt", dict = base)
+schedule.every().seconds.do(inp, dict = base)
 
 
-#schedsave("odp.txt", base)
-def main():
-    while 1:
-        temp_exercise = Exercise(int(input()), input())
-        if temp_exercise.valid():
-            base[temp_exercise.number] = temp_exercise.query
-            print("bangla")
-        else:
-            print("nie bangla")
-
+while 1:
+    schedule.run_pending()
+    time.sleep(1)
