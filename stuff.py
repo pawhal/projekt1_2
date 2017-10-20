@@ -1,6 +1,5 @@
 import re
 
-
 class Exercise:
     def __init__(self, number, query):
         self.number = number
@@ -20,13 +19,6 @@ def inp(dicti):
         temp_exercise = Exercise(int(input()), input())
         if temp_exercise.valid():
             dicti[temp_exercise.number] = temp_exercise.query
-            print("zabanglało")
+            print("bangla")
         else:
             print("nie bangla")
-
-
-def save(file, dicti):
-    with open(file, "w") as f:
-        for key, val in sorted(dicti.items()):
-            f.write(str(key) + " " + val + "\n")
-    print("saved")
