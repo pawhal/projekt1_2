@@ -1,7 +1,7 @@
 import re
 
-class Exercise:
 
+class Exercise:
     def __init__(self, number, query):
         self.number = number
         self.query = query
@@ -14,18 +14,19 @@ class Exercise:
         else:
             return False
 
-def inp(dict):
-    temp_exercise = Exercise(int(input()), input())
-    if temp_exercise.valid():
-        dict[temp_exercise.number] = temp_exercise.query
-        print("bangla")
-    else:
-        print("nie bangla")
+
+def inp(dicti):
+    while 1:
+        temp_exercise = Exercise(int(input()), input())
+        if temp_exercise.valid():
+            dicti[temp_exercise.number] = temp_exercise.query
+            print("bangla")
+        else:
+            print("nie bangla")
 
 
-def save(file, dict):
+def save(file, dicti):
     with open(file, "w") as f:
-        for key, val in sorted(dict.items()):
+        for key, val in sorted(dicti.items()):
             f.write(str(key) + " " + val + "\n")
-    print("SAVED")
-
+    print("dupa")
