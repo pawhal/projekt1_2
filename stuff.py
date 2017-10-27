@@ -47,7 +47,7 @@ def inp(d):
 
 
 def timeleft(end, now):
-    delta = (end.hour - start.hour)*60 + end.minute - start.minute
+    delta = (end.hour - now.hour)*60 + end.minute - now.minute
     return delta
 
 def plan(): #plan zajec na WMI
