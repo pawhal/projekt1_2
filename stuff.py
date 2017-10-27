@@ -1,11 +1,13 @@
 import re
+import unittest
 
-class Exercise:
+class Exercise: #klasa zadania
+
     def __init__(self, number, query):
         self.number = number
         self.query = query
 
-    def valid(self):
+    def valid(self):    #sprawdza poprawnosc zapytania
         match = re.match('select .*?(?=from)from .*?(?=where)where .*?(?=order by)order by( .*)?', self.query, re.I)
         if match:
             return True
@@ -13,27 +15,34 @@ class Exercise:
             return False
 
 
-def save(file, d):
-    print(file)
-    print(d)
+class TestReg(unittest.TestCase): #testy metody sprawdzajacej poprawnosc zapytania
+
+    def test1(self):
+        self.assertEqual(Exercise(23, 'select x from hg where fdf like asd order by f asc').valid(), True)
+
+    def test2(self):
+        self.assertEqual(Exercise(5, 'select where hg from fdf like asd order by f asc').valid(), False)
+
+    def test3(self):
+        self.assertEqual(Exercise(2, 'select x from hg where fdf like asd ').valid(), False)
+
+    def test4(self):
+        self.assertEqual(Exercise(23, 'select from where order by').valid(), True)
+
+
+def save(file, d):  #zapis do odp.txt
     with open(file, "w+") as f:
         for key, val in sorted(d.items()):
              f.write(str(key) + " " + val + "\n")
-    print("saved")
 
 
 def inp(d):
     while 1:
-        temp_exercise = Exercise(int(input()), input())
-        if temp_exercise.valid():
-            d[temp_exercise.number] = temp_exercise.query
-            print("bangla")
+        temp_exercise = Exercise(int(input()), input())     #wprowadzanie zadan
+        if temp_exercise.valid():       #sprawdzenie poprwanosci zapytania
+            d[temp_exercise.number] = temp_exercise.query   # zapis do slownika
         else:
-            print("nie bangla")
+            print('Niepoprawne zapytanie, odpowiedz nie zostanie zapisana')     #komunikat o bledzie
 
-def classes():
-    print("minut do konca zajec")
-
-
-def breaks():
-    print("minut do konca przerwy")
+def plan():
+    print(" x minut do konca zajec/przerwy") #do zamodelowania
