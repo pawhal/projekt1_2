@@ -1,5 +1,6 @@
 import re
 import unittest
+import datetime
 
 class Exercise: #klasa zadania
 
@@ -44,5 +45,44 @@ def inp(d):
         else:
             print('Niepoprawne zapytanie, odpowiedz nie zostanie zapisana')     #komunikat o bledzie
 
-def plan():
-    print(" x minut do konca zajec/przerwy") #do zamodelowania
+
+def timeleft(end, now):
+    delta = (end.hour - start.hour)*60 + end.minute - start.minute
+    return delta
+
+def plan(): #plan zajec na WMI
+    now = datetime.datetime.now().time()
+    if now <= datetime.time(8, 15):
+        return
+    if (now >= datetime.time(8, 15) and now <= datetime.time(9, 45)):
+        print(timeleft(datetime.time(9, 45), now), "do konca zajec")
+        return
+    if (now >= datetime.time(10, 0) and now <= datetime.time(11, 30)):
+        print(timeleft(datetime.time(11, 30), now), "do konca zajec")
+        return
+    if (now >= datetime.time(11, 45) and now <= datetime.time(13, 15)):
+        print(timeleft(datetime.time(13, 15), now), "do konca zajec")
+        return
+    if (now >= datetime.time(13, 45) and now <= datetime.time(15, 15):
+        print(timeleft(datetime.time(15, 15), now), "do konca zajec")
+        return
+    if (now >= datetime.time(15, 30) and now <= datetime.time(17, 0)):
+        print(timeleft(datetime.time(17, 0), now), "do konca zajec")
+        return
+    if (now >= datetime.time(17, 15) and now <= datetime.time(18, 45)):
+        print(timeleft(datetime.time(18:45), now), "do konca zajec")
+        return
+    if (now >= datetime.time(9, 45) and now <= datetime.time(10, 0)):
+        print(timeleft(datetime.time(10, 0), now), "do konca przerwy")
+        return
+    if (now >= datetime.time(10, 30) and now <= datetime.time(10, 45)):
+        print(timeleft(datetime.time(10, 45), now), "do konca przerwy")
+        return
+    if (now >= datetime.time(13, 15) and now <= datetime.time(13, 45)):
+        print(timeleft(datetime.time(13, 45), now), "do konca przerwy")
+        return
+    if (now >= datetime.time(15, 15) and now <= datetime.time(15, 30)):
+        print(timeleft(datetime.time(15, 30), now), "do konca przerwy")
+        return
+    if (now >= datetime.time(17, 0) and now <= datetime.time(17, 15)):
+        print(timeleft(datetime.time(17, 15), now), "do konca przerwy")
