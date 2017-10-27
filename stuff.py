@@ -55,34 +55,34 @@ def plan(): #plan zajec na WMI
     if now <= datetime.time(8, 15):
         return
     if (now >= datetime.time(8, 15) and now <= datetime.time(9, 45)):
-        print(timeleft(datetime.time(9, 45), now), "do konca zajec")
+        print(timeleft(datetime.time(9, 45), now), "minut do konca zajec")
         return
     if (now >= datetime.time(10, 0) and now <= datetime.time(11, 30)):
-        print(timeleft(datetime.time(11, 30), now), "do konca zajec")
+        print(timeleft(datetime.time(11, 30), now), "minut do konca zajec")
         return
     if (now >= datetime.time(11, 45) and now <= datetime.time(13, 15)):
-        print(timeleft(datetime.time(13, 15), now), "do konca zajec")
+        print(timeleft(datetime.time(13, 15), now), "minut do konca zajec")
         return
     if (now >= datetime.time(13, 45) and now <= datetime.time(15, 15):
-        print(timeleft(datetime.time(15, 15), now), "do konca zajec")
+        print(timeleft(datetime.time(15, 15), now), "minut do konca zajec")
         return
     if (now >= datetime.time(15, 30) and now <= datetime.time(17, 0)):
-        print(timeleft(datetime.time(17, 0), now), "do konca zajec")
+        print(timeleft(datetime.time(17, 0), now), "minut do konca zajec")
         return
     if (now >= datetime.time(17, 15) and now <= datetime.time(18, 45)):
-        print(timeleft(datetime.time(18:45), now), "do konca zajec")
+        print(timeleft(datetime.time(18, 45), now), "minut do konca zajec")
         return
     if (now >= datetime.time(9, 45) and now <= datetime.time(10, 0)):
-        print(timeleft(datetime.time(10, 0), now), "do konca przerwy")
+        print(timeleft(datetime.time(10, 0), now), "minut do konca przerwy")
         return
     if (now >= datetime.time(10, 30) and now <= datetime.time(10, 45)):
-        print(timeleft(datetime.time(10, 45), now), "do konca przerwy")
+        print(timeleft(datetime.time(10, 45), now), "minut do konca przerwy")
         return
     if (now >= datetime.time(13, 15) and now <= datetime.time(13, 45)):
-        print(timeleft(datetime.time(13, 45), now), "do konca przerwy")
+        print(timeleft(datetime.time(13, 45), now), "minut do konca przerwy")
         return
     if (now >= datetime.time(15, 15) and now <= datetime.time(15, 30)):
-        print(timeleft(datetime.time(15, 30), now), "do konca przerwy")
+        print(timeleft(datetime.time(15, 30), now), "minut do konca przerwy")
         return
     if (now >= datetime.time(17, 0) and now <= datetime.time(17, 15)):
-        print(timeleft(datetime.time(17, 15), now), "do konca przerwy")
+        print(timeleft(datetime.time(17, 15), now), "minut do konca przerwy")
