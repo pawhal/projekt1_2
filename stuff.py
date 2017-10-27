@@ -63,7 +63,7 @@ def plan(): #plan zajec na WMI
     if (now >= datetime.time(11, 45) and now <= datetime.time(13, 15)):
         print(timeleft(datetime.time(13, 15), now), "minut do konca zajec")
         return
-    if (now >= datetime.time(13, 45) and now <= datetime.time(15, 15):
+    if (now >= datetime.time(13, 45) and now <= datetime.time(15, 15)):
         print(timeleft(datetime.time(15, 15), now), "minut do konca zajec")
         return
     if (now >= datetime.time(15, 30) and now <= datetime.time(17, 0)):
